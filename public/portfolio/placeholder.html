@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio Placeholders</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .placeholder {
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .play-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    .play-icon::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 20px solid #333;
+      margin-left: 5px;
+    }
+    h2 {
+      margin: 0 0 5px 0;
+      font-size: 20px;
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    .instructions {
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    .instructions code {
+      background: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Portfolio Placeholders</h1>
+  
+  <div class="instructions">
+    <p>These are placeholder images for your portfolio. To use them in your Next.js application:</p>
+    <ol>
+      <li>Take screenshots of these placeholders</li>
+      <li>Save them as JPG files in the <code>/public/portfolio/</code> directory</li>
+      <li>Name them according to your page.tsx references: <code>reel1.jpg</code>, <code>poster1.jpg</code>, etc.</li>
+    </ol>
+  </div>
+  
+  <div class="grid">
+    <div class="placeholder" style="background: linear-gradient(45deg, #FF5F6D, #FFC371);">
+      <div class="play-icon"></div>
+      <h2>Product Launch Reel</h2>
+      <p>Instagram Content</p>
+    </div>
+    
+    <div class="placeholder" style="background: linear-gradient(45deg, #4E65FF, #92EFFD);">
+      <div class="play-icon"></div>
+      <h2>Event Promotion</h2>
+      <p>Social Media</p>
+    </div>
+    
+    <div class="placeholder" style="background: linear-gradient(45deg, #A18CD1, #FBC2EB);">
+      <div class="play-icon"></div>
+      <h2>Wedding Invitation</h2>
+      <p>Special Occasions</p>
+    </div>
+    
+    <div class="placeholder" style="background: linear-gradient(45deg, #30CFD0, #330867);">
+      <div class="play-icon"></div>
+      <h2>Brand Story Reel</h2>
+      <p>Instagram Content</p>
+    </div>
+    
+    <div class="placeholder" style="background: linear-gradient(45deg, #F6D365, #FDA085);">
+      <div class="play-icon"></div>
+      <h2>Festival Greetings</h2>
+      <p>Social Media</p>
+    </div>
+    
+    <div class="placeholder" style="background: linear-gradient(45deg, #5EE7DF, #B490CA);">
+      <div class="play-icon"></div>
+      <h2>Business Promo</h2>
+      <p>Marketing</p>
+    </div>
+  </div>
+</body>
+</html>

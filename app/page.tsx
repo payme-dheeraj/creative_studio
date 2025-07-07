@@ -7,7 +7,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { MessageCircle, Instagram, Play, FileImage, Video, Clock, CheckCircle, Phone, Mail, QrCode } from "lucide-react"
+import { MessageCircle, Instagram, Play, FileImage, Video, Clock, CheckCircle, Phone, Mail, QrCode, Palette, Image as ImageIcon, PenTool, Layers, Download, X } from "lucide-react"
+// import { PortfolioGrid } from "@/components/portfolio/portfolio-grid"
+
+// Portfolio item type definition
+type PortfolioItem = {
+  id: string;
+  title: string;
+  category: string;
+  type: string;
+  thumbnail: string;
+  description: string;
+  videoUrl?: string;
+}
 
 export default function PortfolioPage() {
   const [formData, setFormData] = useState({
@@ -19,6 +31,153 @@ export default function PortfolioPage() {
   })
 
   const [loading, setLoading] = useState(false)
+  const [activeCategory, setActiveCategory] = useState("all")
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null)
+  
+  // Portfolio items data
+  const portfolioItems: PortfolioItem[] = [
+    // Videos
+    {
+      id: "video1",
+      title: "Wedding Invitation",
+      category: "video",
+      type: "Video",
+      thumbnail: "/portfolio/video1.jpg",
+      description: "Special Occasions",
+      videoUrl: "/portfolio/videos/wedding-invitation.mp4"
+    },
+    {
+      id: "video2",
+      title: "Corporate Overview",
+      category: "video",
+      type: "Video",
+      thumbnail: "/portfolio/video2.jpg",
+      description: "Business Promotion",
+      videoUrl: "/portfolio/videos/corporate-overview.mp4"
+    },
+    {
+      id: "video3",
+      title: "Product Demo",
+      category: "video",
+      type: "Video",
+      thumbnail: "/portfolio/video1.jpg",
+      description: "E-Commerce",
+      videoUrl: "/portfolio/videos/video3.mp4"
+      // videoUrl: "/portfolio/videos/product-demo.mp4"
+    },
+    
+    // Reels
+    {
+      id: "reel1",
+      title: "Product Launch",
+      category: "reel",
+      type: "Reel",
+      thumbnail: "/portfolio/reel1.jpg",
+      description: "Instagram Content",
+      videoUrl: "/portfolio/reels/product-launch.mp4"
+    },
+    {
+      id: "reel2",
+      title: "Brand Story",
+      category: "reel",
+      type: "Reel",
+      thumbnail: "/portfolio/reel2.jpg",
+      description: "Instagram Content",
+      videoUrl: "/portfolio/reels/brand-story.mp4"
+    },
+    {
+      id: "reel3",
+      title: "Festival Greetings",
+      category: "reel",
+      type: "Reel",
+      thumbnail: "/portfolio/reel1.jpg",
+      description: "Social Media",
+      videoUrl: "/portfolio/reels/festival-greetings.mp4"
+    },
+    
+    // Posters
+    {
+      id: "poster1",
+      title: "Event Promotion",
+      category: "poster",
+      type: "Poster",
+      thumbnail: "/portfolio/posters/poster1.png",
+      description: "Social Media"
+    },
+    {
+      id: "poster2",
+      title: "Sale Announcement",
+      category: "poster",
+      type: "Poster",
+      thumbnail: "/portfolio/poster2.jpg",
+      description: "E-Commerce"
+    },
+    {
+      id: "poster3",
+      title: "Restaurant Menu",
+      category: "poster",
+      type: "Poster",
+      thumbnail: "/portfolio/posters/poster1.png",
+      description: "Food & Beverage"
+    },
+    
+    // Logos
+    {
+      id: "logo1",
+      title: "Brand Identity",
+      category: "logo",
+      type: "Logo",
+      thumbnail: "/portfolio/logos/logo1.png",
+      description: "Corporate Branding"
+    },
+    {
+      id: "logo2",
+      title: "Startup Logo",
+      category: "logo",
+      type: "Logo",
+      thumbnail: "/portfolio/logos/logo2.png",
+      description: "Tech Company"
+    },
+    {
+      id: "logo3",
+      title: "Restaurant Branding",
+      category: "logo",
+      type: "Logo",
+      thumbnail: "/portfolio/logos/logo1.png",
+      description: "Food & Beverage"
+    },
+    
+    // Thumbnails
+    {
+      id: "thumbnail1",
+      title: "YouTube Series",
+      category: "thumbnail",
+      type: "Thumbnail",
+      thumbnail: "/portfolio/thumbnails/thumb1.jpg",
+      description: "Content Creation"
+    },
+    {
+      id: "thumbnail2",
+      title: "Tutorial Thumbnail",
+      category: "thumbnail",
+      type: "Thumbnail",
+      thumbnail: "/portfolio/thumbnails/thumb2.jpg",
+      description: "Educational Content"
+    },
+    {
+      id: "thumbnail3",
+      title: "Podcast Cover",
+      category: "thumbnail",
+      type: "Thumbnail",
+      thumbnail: "/portfolio/thumbnails/thumb1.jpg",
+      description: "Audio Content"
+    }
+  ]
+  
+  // Filter portfolio items based on active category
+  const filteredItems = activeCategory === "all" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === activeCategory)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -70,13 +229,13 @@ export default function PortfolioPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center">
+      <section className="relative py-20 px-4 text-center bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">
               <Video className="h-16 w-16 text-white" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Creative Studio
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -117,48 +276,207 @@ export default function PortfolioPage() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-16 px-4 bg-white">
+      <section id="portfolio" className="py-16 px-4 bg-gradient-to-br from-white to-indigo-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Recent Work</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { type: "Reel", title: "Product Launch Reel", category: "Instagram Content", image: "/portfolio/reel1.jpg" },
-              { type: "Poster", title: "Event Promotion", category: "Social Media", image: "/portfolio/poster1.jpg" },
-              { type: "Video", title: "Wedding Invitation", category: "Special Occasions", image: "/portfolio/video1.jpg" },
-              { type: "Reel", title: "Brand Story Reel", category: "Instagram Content", image: "/portfolio/reel2.jpg" },
-              { type: "Poster", title: "Festival Greetings", category: "Social Media", image: "/portfolio/poster2.jpg" },
-              { type: "Video", title: "Business Promo", category: "Marketing", image: "/portfolio/video2.jpg" },
-            ].map((item, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-shadow cursor-pointer">
-                <CardContent className="p-0">
-                  <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center relative overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                      <Play className="h-12 w-12 text-white opacity-80" />
-                    </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3">Recent Work</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">A showcase of our creative projects across various media formats</p>
+          
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <Button
+              variant={activeCategory === "all" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("all")}
+              className={`flex items-center gap-1 ${activeCategory === "all" ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" : "hover:text-indigo-600"}`}
+            >
+              <Layers className="h-4 w-4" />
+              All
+            </Button>
+            <Button
+              variant={activeCategory === "video" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("video")}
+              className={`flex items-center gap-1 ${activeCategory === "video" ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" : "hover:text-indigo-600"}`}
+            >
+              <Video className="h-4 w-4" />
+              Videos
+            </Button>
+            <Button
+              variant={activeCategory === "reel" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("reel")}
+              className={`flex items-center gap-1 ${activeCategory === "reel" ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" : "hover:text-indigo-600"}`}
+            >
+              <Instagram className="h-4 w-4" />
+              Reels
+            </Button>
+            <Button
+              variant={activeCategory === "poster" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("poster")}
+              className={`flex items-center gap-1 ${activeCategory === "poster" ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" : "hover:text-indigo-600"}`}
+            >
+              <FileImage className="h-4 w-4" />
+              Posters
+            </Button>
+            <Button
+              variant={activeCategory === "logo" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("logo")}
+              className={`flex items-center gap-1 ${activeCategory === "logo" ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" : "hover:text-indigo-600"}`}
+            >
+              <PenTool className="h-4 w-4" />
+              Logos
+            </Button>
+            <Button
+              variant={activeCategory === "thumbnail" ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory("thumbnail")}
+              className={`flex items-center gap-1 ${activeCategory === "thumbnail" ? "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" : "hover:text-indigo-600"}`}
+            >
+              <ImageIcon className="h-4 w-4" />
+              Thumbnails
+            </Button>
+          </div>
+          
+          {/* Main Portfolio Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {filteredItems.map((item) => (
+              <Card key={item.id} className="overflow-hidden border-none shadow-lg group">
+                <div className="relative aspect-square cursor-pointer" onClick={() => setSelectedItem(item)}>
+                  <img 
+                    src={item.thumbnail} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                    {(item.category === "video" || item.category === "reel") ? (
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-500/80 to-purple-500/80 flex items-center justify-center">
+                        <Play className="h-8 w-8 text-white" />
+                      </div>
+                    ) : (
+                      <div className="px-4 py-2 bg-white/80 rounded-full text-sm font-medium">
+                        View Details
+                      </div>
+                    )}
                   </div>
-                  <div className="p-4">
-                    <Badge variant="outline" className="mb-2">
-                      {item.type}
-                    </Badge>
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.category}</p>
-                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <div className="text-sm font-medium text-muted-foreground mb-1">{item.type}</div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-sm text-gray-500 mt-1">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
+            
+            {filteredItems.length === 0 && (
+              <div className="col-span-3 py-12 text-center">
+                <div className="mb-4 text-gray-400">
+                  <Layers className="h-12 w-12 mx-auto" />
+                </div>
+                <h3 className="text-xl font-medium mb-2">No items found</h3>
+                <p className="text-gray-500">No portfolio items match the selected category.</p>
+                <Button 
+                  variant="outline" 
+                  className="mt-4"
+                  onClick={() => setActiveCategory("all")}
+                >
+                  View all works
+                </Button>
+              </div>
+            )}
           </div>
+          
+          {/* <div className="text-center">
+            <Button className="px-8" size="lg">
+              View All Projects
+            </Button>
+          </div> */}
         </div>
       </section>
 
+      {/* Portfolio Item Modal */}
+      <section>
+      {selectedItem && (
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <div className="relative">
+              {/* Video or Image Preview */}
+              <div className="aspect-video bg-gray-100 w-full">
+                {(selectedItem.category === "video" || selectedItem.category === "reel") ? (
+                  selectedItem.videoUrl ? (
+                    <video 
+                      src={selectedItem.videoUrl} 
+                      controls 
+                      autoPlay 
+                      className="w-full h-full object-contain"
+                      poster={selectedItem.thumbnail}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100">
+                      <Play className="h-12 w-12 text-gray-400 mb-2" />
+                      <p className="text-gray-500 text-sm">Video preview not available</p>
+                    </div>
+                  )
+                ) : (
+                  <img 
+                    src={selectedItem.thumbnail} 
+                    alt={selectedItem.title} 
+                    className="w-full h-full object-contain"
+                  />
+                )}
+              </div>
+              
+              {/* Close Button */}
+              <button 
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center"
+                onClick={() => setSelectedItem(null)}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold">{selectedItem.title}</h3>
+                  <p className="text-gray-600">{selectedItem.description}</p>
+                </div>
+                <Badge>{selectedItem.type}</Badge>
+              </div>
+              
+              <div className="flex justify-between items-center">
+                <div className="space-x-2">
+                  <Badge variant="outline">{selectedItem.category}</Badge>
+                  <Badge variant="outline">Portfolio</Badge>
+                </div>
+                
+                {selectedItem.videoUrl && (selectedItem.category === "video" || selectedItem.category === "reel") ? (
+                  <a href={selectedItem.videoUrl} download target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="outline">
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </Button>
+                  </a>
+                ) : (
+                  <a href={selectedItem.thumbnail} download target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="outline">
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </Button>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      </section>
+
       {/* Services Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-gradient-to-b from-indigo-50 to-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services & Pricing</h2>
 
@@ -186,7 +504,7 @@ export default function PortfolioPage() {
               <Card key={index} className="relative hover:shadow-lg transition-shadow">
                 <CardHeader className="text-center">
                   <CardTitle className="text-xl mb-2">{service.service}</CardTitle>
-                  <div className="text-3xl font-bold text-purple-600 mb-2">{service.price}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">{service.price}</div>
                   <div className="flex items-center justify-center text-sm text-gray-600">
                     <Clock className="h-4 w-4 mr-1" />
                     {service.delivery}
@@ -201,7 +519,7 @@ export default function PortfolioPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full" onClick={handleWhatsApp}>
+                  <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" onClick={handleWhatsApp}>
                     Order Now
                   </Button>
                 </CardContent>
@@ -212,7 +530,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Contact & Payment Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-white to-purple-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Let's Work Together</h2>
 
@@ -257,7 +575,7 @@ export default function PortfolioPage() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
                   />
-                  <Button type="submit" className="w-full" disabled={loading}>
+                  <Button type="submit" className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700" disabled={loading}>
                     {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
@@ -275,7 +593,7 @@ export default function PortfolioPage() {
                 </CardHeader>
                 <CardContent className="text-center">
                   <div className="bg-gray-100 p-6 rounded-lg mb-4">
-                    <img src="/placeholder.svg?height=150&width=150" alt="UPI QR Code" className="mx-auto mb-4" />
+                    <img src="/image.png?height=150&width=150" alt="UPI QR Code" className="mx-auto mb-4" />
                     <p className="text-sm text-gray-600 mb-2">Scan to Pay via UPI</p>
                     <p className="font-mono text-sm">creativestudio@upi</p>
                   </div>
@@ -307,7 +625,7 @@ export default function PortfolioPage() {
                     <Instagram className="h-5 w-5 mr-3 text-gray-500" />
                     <span>@creativestudio</span>
                   </div>
-                  <Button onClick={handleWhatsApp} className="w-full bg-green-500 hover:bg-green-600">
+                  <Button onClick={handleWhatsApp} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Chat on WhatsApp
                   </Button>
@@ -319,8 +637,8 @@ export default function PortfolioPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
+      <footer className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-8 px-4 text-center">
+        <div className="max-w-6xl mx-auto">
           <p className="mb-4">© 2024 Creative Studio. All rights reserved.</p>
           <p className="text-gray-400 text-sm">Helping businesses grow with creative content that converts</p>
         </div>

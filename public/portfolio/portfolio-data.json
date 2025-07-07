@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "product-launch",
+      "title": "Product Launch Reel",
+      "category": "Instagram Content",
+      "type": "video",
+      "thumbnail": "/portfolio/thumbnails/product-launch.jpg",
+      "content": "/portfolio/content/product-launch.mp4",
+      "description": "Engaging product launch campaign for a new tech gadget"
+    },
+    {
+      "id": "event-promotion",
+      "title": "Event Promotion",
+      "category": "Social Media",
+      "type": "image",
+      "thumbnail": "/portfolio/thumbnails/event-promotion.jpg",
+      "content": "/portfolio/content/event-promotion.jpg",
+      "description": "Promotional material for a major industry conference"
+    },
+    {
+      "id": "wedding-invitation",
+      "title": "Wedding Invitation",
+      "category": "Special Occasions",
+      "type": "video",
+      "thumbnail": "/portfolio/thumbnails/wedding-invitation.jpg",
+      "content": "/portfolio/content/wedding-invitation.mp4",
+      "description": "Elegant digital invitation for a destination wedding"
+    },
+    {
+      "id": "brand-story",
+      "title": "Brand Story Reel",
+      "category": "Branding",
+      "type": "video",
+      "thumbnail": "/portfolio/thumbnails/brand-story.jpg",
+      "content": "/portfolio/content/brand-story.mp4",
+      "description": "Compelling brand narrative for an eco-friendly startup"
+    },
+    {
+      "id": "festival-greetings",
+      "title": "Festival Greetings",
+      "category": "Holiday",
+      "type": "image",
+      "thumbnail": "/portfolio/thumbnails/festival-greetings.jpg",
+      "content": "/portfolio/content/festival-greetings.jpg",
+      "description": "Festive greeting card design for corporate clients"
+    },
+    {
+      "id": "business-promo",
+      "title": "Business Promo",
+      "category": "Marketing",
+      "type": "video",
+      "thumbnail": "/portfolio/thumbnails/business-promo.jpg",
+      "content": "/portfolio/content/business-promo.mp4",
+      "description": "Dynamic promotional video for a business service"
+    }
+  ]
+}
