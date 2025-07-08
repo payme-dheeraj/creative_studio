@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { MessageCircle, Instagram, Play, FileImage, Video, Clock, CheckCircle, Phone, Mail, QrCode, Palette, Image as ImageIcon, PenTool, Layers, Download, X } from "lucide-react"
+import { MessageCircle, Instagram, Play, FileImage, Video, Clock, CheckCircle, Phone, Mail, QrCode, Palette, Image as ImageIcon, PenTool, Layers, Download, X, BarChart, TrendingUp } from "lucide-react"
 // import { PortfolioGrid } from "@/components/portfolio/portfolio-grid"
 
 // Portfolio item type definition
@@ -244,22 +244,34 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
-              <Instagram className="h-4 w-4 mr-2" />
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Badge variant="secondary" className="px-4 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">
+          <Instagram className="h-4 w-4 mr-2" />
               Instagram Reels
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">
               <FileImage className="h-4 w-4 mr-2" />
               Social Media Posters
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">
               <Video className="h-4 w-4 mr-2" />
               Wedding Invites
             </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">
+              <BarChart className="h-4 w-4 mr-2" />
+              Thumbnails
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">
+              <FileImage className="h-4 w-4 mr-2" />
+              Content Creation
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-2 text-sm bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-none">
+              <Video className="h-4 w-4 mr-2" />
+              Video Marketing
+            </Badge>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center" style={{ marginTop: "1rem" }}>
             <Button onClick={handleWhatsApp} size="lg" className="bg-green-500 hover:bg-green-600">
               <MessageCircle className="h-5 w-5 mr-2" />
               Chat on WhatsApp
@@ -473,6 +485,112 @@ export default function PortfolioPage() {
           </div>
         </div>
       )}
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Our Social Media Services
+            </h2>
+            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+              Comprehensive solutions to boost your brand's online presence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Service 1 */}
+            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <CardHeader className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+                <CardTitle className="flex items-center">
+                  <BarChart className="h-5 w-5 mr-2" />
+                  Strategy Development
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Platform-specific content strategies</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Competitor analysis and benchmarking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Target audience research and profiling</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Content calendar planning</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Service 2 */}
+            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <CardHeader className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+                <CardTitle className="flex items-center">
+                  <Layers className="h-5 w-5 mr-2" />
+                  Content Creation
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Engaging posts with branded graphics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Short-form video production for Reels/TikTok</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Copywriting optimized for each platform</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Hashtag research and implementation</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Service 3 */}
+            <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
+              <CardHeader className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+                <CardTitle className="flex items-center">
+                  <TrendingUp className="h-5 w-5 mr-2" />
+                  Growth & Engagement
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Community management and engagement</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Influencer outreach and collaborations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Social listening and trend monitoring</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
+                    <span>Performance analytics and reporting</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}
