@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { MessageCircle, Instagram, Play, FileImage, Video, Clock, CheckCircle, Phone, Mail, QrCode, Palette, Image as ImageIcon, PenTool, Layers, Download, X, BarChart, TrendingUp } from "lucide-react"
+import { MessageCircle, Instagram, Play, FileImage, Video, Clock, CheckCircle, Phone, Mail, QrCode, Palette, Image as ImageIcon, PenTool, Layers, Download, X, BarChart, TrendingUp, Sparkles, Menu } from "lucide-react"
 // import { PortfolioGrid } from "@/components/portfolio/portfolio-grid"
 
 // Portfolio item type definition
@@ -217,6 +217,38 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      {/* Header */}
+      <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b">
+        <div className="container mx-auto flex items-center justify-between h-16 px-4">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mr-2">
+              <Sparkles className="h-5 w-5 text-white" />
+            </div>
+            <span className="font-bold text-xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Creative Studio</span>
+          </div>
+          
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center space-x-6">
+            <a href="#portfolio" className="text-gray-700 hover:text-indigo-600 transition-colors">Portfolio</a>
+            <a href="#services" className="text-gray-700 hover:text-indigo-600 transition-colors">Services</a>
+            <a href="#pricing" className="text-gray-700 hover:text-indigo-600 transition-colors">Pricing</a>
+            <Button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
+              size="sm"
+            >
+              Contact Us
+            </Button>
+          </nav>
+          
+          {/* Mobile menu button */}
+          <Button variant="ghost" size="icon" className="md:hidden">
+            <Menu className="h-5 w-5" />
+          </Button>
+        </div>
+      </header>
+      
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button
@@ -488,7 +520,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-purple-50">
+      <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-purple-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -594,7 +626,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-4 bg-gradient-to-b from-indigo-50 to-white">
+      <section id="pricing" className="py-16 px-4 bg-gradient-to-b from-indigo-50 to-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services & Pricing</h2>
 
@@ -648,7 +680,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Contact & Payment Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-white to-purple-50">
+      <section id="contact" className="py-16 px-4 bg-gradient-to-br from-white to-purple-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Let's Work Together</h2>
 
