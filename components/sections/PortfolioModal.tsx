@@ -22,10 +22,10 @@ interface PortfolioModalProps {
 export function PortfolioModal({ item, onClose }: PortfolioModalProps) {
   return (
     <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
+      <div className="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto">
         <div className="relative">
           {/* Video or Image Preview */}
-          <div className="aspect-video bg-gray-100 w-full">
+          <div className="aspect-video bg-gray-100 dark:bg-gray-700 w-full">
             {(item.category === "video" || item.category === "reel") ? (
               item.videoUrl ? (
                 <video 
@@ -36,9 +36,9 @@ export function PortfolioModal({ item, onClose }: PortfolioModalProps) {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100">
-                  <Play className="h-12 w-12 text-gray-400 mb-2" />
-                  <p className="text-gray-500 text-sm">Video preview not available</p>
+                <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-700">
+                  <Play className="h-12 w-12 text-gray-400 dark:text-gray-300 mb-2" />
+                  <p className="text-gray-500 dark:text-gray-300 text-sm">Video preview not available</p>
                 </div>
               )
             ) : (
@@ -52,7 +52,7 @@ export function PortfolioModal({ item, onClose }: PortfolioModalProps) {
           
           {/* Close Button */}
           <button 
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 flex items-center justify-center"
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 dark:bg-gray-800/80 flex items-center justify-center"
             onClick={onClose}
           >
             <X className="h-5 w-5" />
@@ -61,8 +61,8 @@ export function PortfolioModal({ item, onClose }: PortfolioModalProps) {
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h3 className="text-2xl font-bold">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <h3 className="text-2xl font-bold dark:text-white">{item.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
             </div>
             <Badge>{item.type}</Badge>
           </div>

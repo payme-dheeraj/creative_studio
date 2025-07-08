@@ -31,23 +31,23 @@ export default function Pricing({ onWhatsAppClick }: PricingProps) {
   ]
 
   return (
-    <section id="pricing" className="py-16 px-4 bg-gradient-to-b from-indigo-50 to-white">
+    <section id="pricing" className="py-16 px-4 bg-gradient-to-b from-indigo-50 to-white dark:from-gray-900 dark:to-gray-950">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services & Pricing</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Services & Pricing</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="relative hover:shadow-lg transition-shadow">
+            <Card key={index} className="relative hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
               <CardHeader className="text-center">
-                <CardTitle className="text-xl mb-2">{service.service}</CardTitle>
+                <CardTitle className="text-xl mb-2 dark:text-white">{service.service}</CardTitle>
                 <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">{service.price}</div>
-                <div className="flex items-center justify-center text-sm text-gray-600">
+                <div className="flex items-center justify-center text-sm text-gray-600 dark:text-gray-300">
                   <Clock className="h-4 w-4 mr-1" />
                   {service.delivery}
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 dark:text-gray-300">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />

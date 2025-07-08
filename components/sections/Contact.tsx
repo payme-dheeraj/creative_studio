@@ -53,16 +53,16 @@ export default function Contact({ onWhatsAppClick }: ContactProps) {
   }
 
   return (
-    <section id="contact" className="py-16 px-4 bg-gradient-to-br from-white to-purple-50">
+    <section id="contact" className="py-16 px-4 bg-gradient-to-br from-white to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Let's Work Together</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Let's Work Together</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <Card>
+          <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardHeader>
-              <CardTitle>Get a Quote</CardTitle>
-              <CardDescription>Tell me about your project and I'll get back to you soon!</CardDescription>
+              <CardTitle className="dark:text-white">Get a Quote</CardTitle>
+              <CardDescription className="dark:text-gray-300">Tell me about your project and I'll get back to you soon!</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -107,7 +107,7 @@ export default function Contact({ onWhatsAppClick }: ContactProps) {
 
           {/* Contact Info & Payment */}
           <div className="space-y-6">
-            <Card>
+            <Card className="dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <QrCode className="h-5 w-5 mr-2" />
@@ -115,10 +115,10 @@ export default function Contact({ onWhatsAppClick }: ContactProps) {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="bg-gray-100 p-6 rounded-lg mb-4">
+                <div className="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg mb-4">
                   <img src="/image.png?height=150&width=150" alt="UPI QR Code" className="mx-auto mb-4" />
-                  <p className="text-sm text-gray-600 mb-2">Scan to Pay via UPI</p>
-                  <p className="font-mono text-sm">creativestudio@upi</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Scan to Pay via UPI</p>
+                  <p className="font-mono text-sm dark:text-gray-300">creativestudio@upi</p>
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline" className="flex-1 bg-transparent" size="sm">
@@ -131,22 +131,22 @@ export default function Contact({ onWhatsAppClick }: ContactProps) {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle>Contact Info</CardTitle>
+                <CardTitle className="dark:text-white">Contact Info</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 mr-3 text-gray-500" />
-                  <span>+91 7838570981</span>
+                  <Phone className="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" />
+                  <span className="dark:text-gray-300">+91 7838570981</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 mr-3 text-gray-500" />
-                  <span>hello@creativestudio.com</span>
+                  <Mail className="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" />
+                  <span className="dark:text-gray-300">hello@creativestudio.com</span>
                 </div>
                 <div className="flex items-center">
-                  <Instagram className="h-5 w-5 mr-3 text-gray-500" />
-                  <span>@creativestudio</span>
+                  <Instagram className="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" />
+                  <span className="dark:text-gray-300">@creativestudio</span>
                 </div>
                 <Button onClick={onWhatsAppClick} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600">
                   <MessageCircle className="h-4 w-4 mr-2" />

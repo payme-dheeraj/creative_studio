@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { Sparkles, Menu } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-sm border-b">
+    <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b dark:border-gray-800">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         {/* Logo */}
         <div className="flex items-center">
@@ -17,9 +18,10 @@ export default function Header() {
         
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#portfolio" className="text-gray-700 hover:text-indigo-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }) }}>Portfolio</a>
-          <a href="#services" className="text-gray-700 hover:text-indigo-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) }}>Services</a>
-          <a href="#pricing" className="text-gray-700 hover:text-indigo-600 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }) }}>Pricing</a>
+          <a href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }) }}>Portfolio</a>
+          <a href="#services" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) }}>Services</a>
+          <a href="#pricing" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }) }}>Pricing</a>
+          <ThemeToggle />
           <Button 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"

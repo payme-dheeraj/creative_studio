@@ -168,61 +168,37 @@ export default function Portfolio() {
 
   return (
     <>
-      <section id="portfolio" className="py-16 px-4 bg-gradient-to-br from-white to-indigo-50">
+      <section id="portfolio" className="py-16 px-4 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-3">Recent Work</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">A showcase of our creative projects across various media formats</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">Our Portfolio</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center mb-8 max-w-3xl mx-auto">A showcase of our creative projects across various media formats</p>
           
           {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <Button
-              variant={activeCategory === "all" ? "default" : "outline"}
-              onClick={() => setActiveCategory("all")}
-              className={activeCategory === "all" ? "bg-gradient-to-r from-indigo-600 to-purple-600" : ""}
-            >
+          <div className="flex justify-center space-x-2 mb-8 dark:text-white">
+            <button onClick={() => setActiveCategory("all")} className={`px-4 py-2 rounded-full ${activeCategory === "all" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               All
-            </Button>
-            <Button
-              variant={activeCategory === "video" ? "default" : "outline"}
-              onClick={() => setActiveCategory("video")}
-              className={activeCategory === "video" ? "bg-gradient-to-r from-indigo-600 to-purple-600" : ""}
-            >
+            </button>
+            <button onClick={() => setActiveCategory("video")} className={`px-4 py-2 rounded-full ${activeCategory === "video" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Videos
-            </Button>
-            <Button
-              variant={activeCategory === "reel" ? "default" : "outline"}
-              onClick={() => setActiveCategory("reel")}
-              className={activeCategory === "reel" ? "bg-gradient-to-r from-indigo-600 to-purple-600" : ""}
-            >
+            </button>
+            <button onClick={() => setActiveCategory("reel")} className={`px-4 py-2 rounded-full ${activeCategory === "reel" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Reels
-            </Button>
-            <Button
-              variant={activeCategory === "poster" ? "default" : "outline"}
-              onClick={() => setActiveCategory("poster")}
-              className={activeCategory === "poster" ? "bg-gradient-to-r from-indigo-600 to-purple-600" : ""}
-            >
+            </button>
+            <button onClick={() => setActiveCategory("poster")} className={`px-4 py-2 rounded-full ${activeCategory === "poster" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Posters
-            </Button>
-            <Button
-              variant={activeCategory === "logo" ? "default" : "outline"}
-              onClick={() => setActiveCategory("logo")}
-              className={activeCategory === "logo" ? "bg-gradient-to-r from-indigo-600 to-purple-600" : ""}
-            >
+            </button>
+            <button onClick={() => setActiveCategory("logo")} className={`px-4 py-2 rounded-full ${activeCategory === "logo" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Logos
-            </Button>
-            <Button
-              variant={activeCategory === "thumbnail" ? "default" : "outline"}
-              onClick={() => setActiveCategory("thumbnail")}
-              className={activeCategory === "thumbnail" ? "bg-gradient-to-r from-indigo-600 to-purple-600" : ""}
-            >
+            </button>
+            <button onClick={() => setActiveCategory("thumbnail")} className={`px-4 py-2 rounded-full ${activeCategory === "thumbnail" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Thumbnails
-            </Button>
+            </button>
           </div>
           
           {/* Main Portfolio Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="overflow-hidden border-none shadow-lg group">
+              <Card key={item.id} className="overflow-hidden border-none shadow-lg group dark:bg-gray-800">
                 <div className="relative aspect-square cursor-pointer" onClick={() => setSelectedItem(item)}>
                   <img 
                     src={item.thumbnail} 
@@ -241,9 +217,9 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <CardContent className="p-4">
-                  <div className="text-sm font-medium text-muted-foreground mb-1">{item.type}</div>
+                  <div className="p-4 text-center dark:text-white text-sm font-medium text-muted-foreground mb-1">{item.type}</div>
                   <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                  <span className="text-xs text-gray-500 dark:text-gray-400 block">{item.description}</span>
                 </CardContent>
               </Card>
             ))}
