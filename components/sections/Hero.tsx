@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative py-12 md:py-20 px-4 text-center bg-gradient-to-br from-indigo-50 via-purple-50 to-white dark:from-gray-900 dark:via-indigo-950 dark:to-gray-950">
+    <section id="hero" className="relative py-12 md:py-20 px-4 text-center bg-gradient-to-br from-indigo-50 via-purple-50 to-white dark:from-gray-900 dark:via-indigo-950 dark:to-gray-950">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 md:mb-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center">

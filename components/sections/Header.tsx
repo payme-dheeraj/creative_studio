@@ -28,12 +28,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b dark:border-gray-800">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        {/* Logo */}
-        <div className="flex items-center">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mr-2">
+        {/* Logo - Clickable */}
+        <div 
+          className="flex items-center cursor-pointer group" 
+          onClick={() => handleNavClick('hero')}
+        >
+          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mr-2 group-hover:scale-105 transition-transform">
             <Sparkles className="h-5 w-5 text-white"/>
           </div>
-          <span className="font-bold text-xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Creative Studio</span>
+          <span className="font-bold text-xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">Creative Studio</span>
         </div>
         
         {/* Desktop Navigation */}

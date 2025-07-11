@@ -13,7 +13,7 @@ import WhatsAppButton from "@/components/sections/WhatsAppButton"
 export default function PortfolioPage() {
   // Function to handle WhatsApp click
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/917838570981", "_blank")
+    window.open("https://wa.me/917838570981", "Hello! I'm interested in your creative services. Can you help me with my project?")
   }
 
   return (
