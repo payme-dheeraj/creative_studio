@@ -170,33 +170,33 @@ export default function Portfolio() {
     <>
       <section id="portfolio" className="py-16 px-4 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">Our Portfolio</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 text-center mb-8 max-w-3xl mx-auto">A showcase of our creative projects across various media formats</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 dark:text-white text-center">Our Portfolio</h2>
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 text-center mb-6 sm:mb-8 max-w-3xl mx-auto">A showcase of our creative projects across various media formats</p>
           
           {/* Category Tabs */}
-          <div className="flex justify-center space-x-2 mb-8 dark:text-white">
-            <button onClick={() => setActiveCategory("all")} className={`px-4 py-2 rounded-full ${activeCategory === "all" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
+          <div className="flex flex-wrap justify-center gap-2 px-2 mb-8 dark:text-white">
+            <button onClick={() => setActiveCategory("all")} className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-full ${activeCategory === "all" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               All
             </button>
-            <button onClick={() => setActiveCategory("video")} className={`px-4 py-2 rounded-full ${activeCategory === "video" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
+            <button onClick={() => setActiveCategory("video")} className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-full ${activeCategory === "video" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Videos
             </button>
-            <button onClick={() => setActiveCategory("reel")} className={`px-4 py-2 rounded-full ${activeCategory === "reel" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
+            <button onClick={() => setActiveCategory("reel")} className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-full ${activeCategory === "reel" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Reels
             </button>
-            <button onClick={() => setActiveCategory("poster")} className={`px-4 py-2 rounded-full ${activeCategory === "poster" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
+            <button onClick={() => setActiveCategory("poster")} className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-full ${activeCategory === "poster" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Posters
             </button>
-            <button onClick={() => setActiveCategory("logo")} className={`px-4 py-2 rounded-full ${activeCategory === "logo" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
+            <button onClick={() => setActiveCategory("logo")} className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-full ${activeCategory === "logo" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Logos
             </button>
-            <button onClick={() => setActiveCategory("thumbnail")} className={`px-4 py-2 rounded-full ${activeCategory === "thumbnail" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
+            <button onClick={() => setActiveCategory("thumbnail")} className={`px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base rounded-full ${activeCategory === "thumbnail" ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"}`}>
               Thumbnails
             </button>
           </div>
           
           {/* Main Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
             {filteredItems.map((item) => (
               <Card key={item.id} className="overflow-hidden border-none shadow-lg group dark:bg-gray-800">
                 <div className="relative aspect-square cursor-pointer" onClick={() => setSelectedItem(item)}>
