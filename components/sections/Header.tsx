@@ -55,17 +55,20 @@ export default function Header() {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="md:hidden"
+          className="md:hidden relative overflow-hidden group"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <span className="absolute inset-0 bg-indigo-100 dark:bg-indigo-900/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-md"></span>
+          {mobileMenuOpen ? 
+            <X className="h-5 w-5 relative z-10 text-indigo-600 dark:text-indigo-400" /> : 
+            <Menu className="h-5 w-5 relative z-10 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors" />
+          }
         </Button>
       </div>
       
       {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 border-b dark:border-gray-800 shadow-lg z-50">
+      <div className={`md:hidden absolute top-16 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b dark:border-gray-800 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0 pointer-events-none'}`}>
           <div className="flex flex-col p-4 space-y-4">
             <a 
               href="#portfolio" 
@@ -100,7 +103,6 @@ export default function Header() {
             </Button>
           </div>
         </div>
-      )}
     </header>
   )
 }
