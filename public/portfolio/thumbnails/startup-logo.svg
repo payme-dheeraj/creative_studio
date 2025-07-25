@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="startupGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#startupGradient)" />
+
+  <!-- Tech-inspired grid pattern -->
+  <g stroke="white" stroke-width="1" opacity="0.1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="500" x2="800" y2="500" />
+    <line x1="0" y1="600" x2="800" y2="600" />
+    <line x1="0" y1="700" x2="800" y2="700" />
+    
+    <line x1="100" y1="0" x2="100" y2="800" />
+    <line x1="200" y1="0" x2="200" y2="800" />
+    <line x1="300" y1="0" x2="300" y2="800" />
+    <line x1="400" y1="0" x2="400" y2="800" />
+    <line x1="500" y1="0" x2="500" y2="800" />
+    <line x1="600" y1="0" x2="600" y2="800" />
+    <line x1="700" y1="0" x2="700" y2="800" />
+  </g>
+
+  <!-- Main logo container -->
+  <g transform="translate(400, 400)">
+    <!-- Logo background -->
+    <circle cx="0" cy="0" r="180" fill="white" />
+    
+    <!-- Modern startup logo -->
+    <g transform="translate(0, -20)">
+      <!-- Abstract tech shape -->
+      <path d="M-100,20 L0,-80 L100,20 L60,80 L-60,80 Z" fill="url(#logoGradient)" />
+      
+      <!-- Accent elements -->
+      <circle cx="0" cy="-20" r="25" fill="white" />
+      <circle cx="0" cy="-20" r="15" fill="#0ea5e9" />
+    </g>
+    
+    <!-- Company name placeholder -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#0f172a"></text>
+  </g>
+
+  <!-- Tech elements -->
+  <g fill="white" opacity="0.2">
+    <circle cx="150" cy="150" r="20" />
+    <circle cx="650" cy="150" r="20" />
+    <circle cx="150" cy="650" r="20" />
+    <circle cx="650" cy="650" r="20" />
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="700" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="white">TECH STARTUP BRANDING</text>
+</svg>

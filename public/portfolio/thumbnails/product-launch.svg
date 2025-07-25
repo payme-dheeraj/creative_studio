@@ -1,0 +1,13 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad1)" />
+  <text x="400" y="300" font-family="Arial" font-size="40" text-anchor="middle" fill="white">Product Launch Reel</text>
+  <text x="400" y="350" font-family="Arial" font-size="24" text-anchor="middle" fill="white">Instagram Content</text>
+  <circle cx="400" cy="200" r="50" fill="white" fill-opacity="0.2" />
+  <path d="M425 200 L390 180 L390 220 Z" fill="white" />
+</svg>

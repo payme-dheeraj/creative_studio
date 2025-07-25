@@ -1,0 +1,14 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad1)" />
+  <text x="400" y="300" font-family="Arial" font-size="40" text-anchor="middle" fill="white">Brand Story Reel</text>
+  <text x="400" y="350" font-family="Arial" font-size="24" text-anchor="middle" fill="white">Branding</text>
+  <circle cx="400" cy="180" r="60" fill="white" fill-opacity="0.2" />
+  <path d="M370 180 L440 180 L440 220 L370 220 Z" fill="white" fill-opacity="0.3" />
+  <path d="M380 160 L420 160 L420 200 L380 200 Z" fill="white" fill-opacity="0.3" />
+</svg>

@@ -1,0 +1,30 @@
+<svg width="1080" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8E2DE2" />
+      <stop offset="100%" stop-color="#4A00E0" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- Mic Icon (simplified) -->
+  <circle cx="540" cy="400" r="90" fill="#ffffff22" />
+  <rect x="515" y="320" width="50" height="100" rx="25" fill="#ffffff" />
+  <rect x="535" y="420" width="10" height="40" fill="#ffffff" />
+  <circle cx="540" cy="460" r="50" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.7" />
+
+  <!-- Title -->
+  <text x="50%" y="620" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    PODCAST COVER
+  </text>
+
+  <!-- Subtitle -->
+  <text x="50%" y="670" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#ffffffcc" text-anchor="middle">
+    Your Next Big Idea Starts Here
+  </text>
+
+  <!-- Decorative Waves -->
+  <path d="M 200 800 Q 300 780 400 800 T 600 800 T 800 800 T 1000 800" stroke="#ffffff22" stroke-width="6" fill="none" />
+  <path d="M 250 840 Q 350 820 450 840 T 650 840 T 850 840" stroke="#ffffff22" stroke-width="4" fill="none" />
+</svg>
